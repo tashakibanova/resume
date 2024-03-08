@@ -171,7 +171,7 @@
                 <h4><i class="fas fa-map-marker-alt"></i>Россия, Пермь</h4>
             </div>
         </div>
-        <form id="form" action="#" method="post">
+        <form id="form" action="application.php" method="post" name=" application">
             <input type="text" name="name" class="input-box" placeholder="Ваше имя" autocomplete="off" required>
             <input type="email" name="email" class="input-box" placeholder="Ваш email" autocomplete="off" required>
             <input type="text" name="project" class="input-box" placeholder="Проект" autocomplete="off" required>
@@ -179,38 +179,13 @@
             <button type="submit" class="btn" name="send">Отправить <i class="fas fa-paper-plane"></i></button>
         </form>
     </div>
-    <!-- script form -->
-<?php
-if(isset($_POST['send'])) {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $project = $_POST['project'];
-    $message = $_POST['message'];
-    
-    $to = "твое мыло";
-    $subject = "Новая заявка с сайта";
-    
-    $body = "Имя: " . $name . "\n";
-    $body .= "Email: " . $email . "\n";
-    $body .= "Проект: " . $project . "\n";
-    $body .= "Сообщение: " . $message;
-    
-    $headers = "From: " . $email;
-    
-    if(mail($to, $subject, $body, $headers)) {
-        echo "Ваше сообщение успешно отправлено.";
-    } else {
-        echo "Ошибка при отправке сообщения.";
-    }
-}
-?>
 </section>
 <!-- contact section end -->
 
 <!-- footer section start -->
 <div class="social-links">
-    <a href="#" class="fab fa-telegram"></a>
-    <a href="#" class="fab fa-vk"></a>
+    <a href="https://t.me/tasha_kibanova" class="fab fa-telegram"></a>
+    <a href="https://vk.com/tasha.kibanova" class="fab fa-vk"></a>
 </div>
 <!-- footer section end -->
 
