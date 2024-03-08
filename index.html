@@ -179,6 +179,31 @@
             <button type="submit" class="btn" name="send">Отправить <i class="fas fa-paper-plane"></i></button>
         </form>
     </div>
+    <!-- script form -->
+<?php
+if(isset($_POST['send'])) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $project = $_POST['project'];
+    $message = $_POST['message'];
+    
+    $to = "твое мыло";
+    $subject = "Новая заявка с сайта";
+    
+    $body = "Имя: " . $name . "\n";
+    $body .= "Email: " . $email . "\n";
+    $body .= "Проект: " . $project . "\n";
+    $body .= "Сообщение: " . $message;
+    
+    $headers = "From: " . $email;
+    
+    if(mail($to, $subject, $body, $headers)) {
+        echo "Ваше сообщение успешно отправлено.";
+    } else {
+        echo "Ошибка при отправке сообщения.";
+    }
+}
+?>
 </section>
 <!-- contact section end -->
 
@@ -191,6 +216,7 @@
 
 <!-- script link -->
 <script src="./js/menu.js"></script>
+
 
 </body>
 </html>
