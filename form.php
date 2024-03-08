@@ -1,36 +1,22 @@
 <?php    
-header('Content-Type: text/html; charset=utf-8', true); 
+$name = $_POST['name'];
+$email = $_POST['email'];
+$message = $_POST['message'];
+$name = htmlspecialchars($name);
+$email = htmlspecialchars($email);
+$name = urldecode($name);
+$email = urldecode($email);
+$name = trim($name);
+$email = trim($email);
 
-$actual_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
+mail("ov.nattie@gmail.com", "Заявка с сайта", "ФИО:".$name.". E-mail: ".$email ,"From: example2@mail.ru \r\n");
 
-
-if ($_GET['name']  != '' && $_GET["email"] != '' && $_GET["message"] != '') {
-	if (isset($_GET['name'])  && isset($_GET["email"]) && isset($_GET["message"])) {
-
-		$to  = 'ov.nattie@gmail.com';
-
-		$subject = 'Заказ с сайта';
-
-		$message = '<p>Пришла завяка от клиента:</p>
-			<p>Имя клиента: '.$_GET["name"].'</p>
-			<p>Почта клиента: '.$_GET["email"].'</p> 
-            <p>Сообщение: '.$_GET["message"].'</p> ';
-
-		$headers  = 'MIME-Version: 1.0' . "\r\n";
-		$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-
-		if (mail($to, $subject, $message, $headers)) {
-			echo "<p>Успешно отправлено сообщение</p>";
-			header("refresh: 3; url=$actual_link"); die();
-		}else{
-			echo "<p>Произошла ошибка при отправки формы.</p>";
-			header("refresh: 3; url=$actual_link"); die();
-		}
-	}
-}else{
-	echo "<p>Не все поля заполнены!</p>";
-	header("refresh: 3; url=$actual_link"); die();
+if (mail("ov.nattie@gmail.com", "Заказ с сайта", "ФИО:".$name.". E-mail: ".$email ,"From: example2@mail.ru \r\n"))
+ {
+    echo "сообщение успешно отправлено";
+} else {
+    echo "при отправке сообщения возникли ошибки";
 }
-
 ?>
 
+<!-- Вместо example@mail.ru должен быть email адрес на который нужно отправить письмо, а вместо example2@mail.ru должен быть существующий email данного сайта. Например для сайта webriz.ru это будет info@webriz.ru.  Только в этом случае письмо с данными из формы будет отправлено. -->
