@@ -367,6 +367,13 @@ header .navbar ul li a:hover {
     width: 20rem;
     resize: none;
 }
+.form__send-result {
+    font-size: 1.5rem;
+    color: var(--main-clr);
+    
+    margin-bottom: 4rem;
+
+}
 /* contact section end */
 
 /* footer section start */

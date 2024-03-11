@@ -172,25 +172,27 @@
                 <h4><i class="fas fa-map-marker-alt"></i>Россия, Пермь</h4>
             </div>
         </div>
-        <form action="form.php" method="post">
-            <input type="text" name="name" class="input-box" placeholder="Ваше имя" autocomplete="off" required>
-            <input type="email" name="email" class="input-box" placeholder="Ваш email" autocomplete="off" required>
-            <textarea name="message" id="" cols="30" rows="10" class="input-box" placeholder="Сообщение" required></textarea>
-            <button id="sendMessage" name="sendMessage" type="submit" class="btn">Отправить <i class="fas fa-paper-plane"></i></button>
+        <form class="form" onsubmit="sendEmailTelegram(event)">
+            <input type="text" name="name" class="input-box" placeholder="Представьтесь, пожалуйста" autocomplete="off" required>
+            <input type="telegram" name="telegram" class="input-box" placeholder="Ваш ник в Telegram или ссылка на аккаунт" autocomplete="off" required>
+            <textarea name="message" id="" cols="30" rows="10" class="input-box" placeholder="Чем я могу быть вам полезна?" required></textarea>
+            <button id="form__submit-button" type="submit" class="btn">Отправить <i class="fas fa-paper-plane"></i></button>           
         </form>
+        <div class="form__send-result"></div>
     </div>
 </section>
 <!-- contact section end -->
 
 <!-- footer section start -->
 <div class="social-links">
-    <a href="https://t.me/tasha_kibanova" class="fab fa-telegram"></a>
-    <a href="https://vk.com/tasha.kibanova" class="fab fa-vk"></a>
+    <a href="https://t.me/tasha_kibanova" class="fab fa-telegram" target="_blank"></a>
+    <a href="https://vk.com/tasha.kibanova" class="fab fa-vk" target="_blank"></a>
 </div>
 <!-- footer section end -->
 
 <!-- script link -->
 <script src="./js/menu.js"></script>
+<script src="./js/form.js"></script>
 
 
 </body>
