@@ -28,7 +28,7 @@ async function sendEmailTelegram(event) {
         })
 
         if (response.ok) {
-            formSendResult.textContent = 'Если форма работает, то я обязательно свяжусь с вами! Или вы можете сделать это самостоятельно по кнопкам ниже:';
+            formSendResult.textContent = 'Если форма работает (а она работает), то я обязательно свяжусь с вами! Или вы можете сделать это самостоятельно по кнопкам ниже:';
             form.reset()  
         } else {
             throw new Error(response.statusText);
